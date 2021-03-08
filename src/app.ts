@@ -9,7 +9,7 @@ import {
 } from '@fluid-experimental/data-objects';
 import { Fluid } from '@fluid-experimental/fluid-static';
 import { getContainerId } from './utils';
-import { jsRenderView as renderView } from './view';
+import { reactRenderView as renderView } from './view';
 
 const { containerId, isNew } = getContainerId();
 

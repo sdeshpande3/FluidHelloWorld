@@ -45,6 +45,7 @@ const ReactView = (props: IReactViewProps) => {
             <button style={{ fontSize: 50 }} onClick={rollDice}>
                 Roll
             </button>
+            <button onClick={() => dataObject.set("test", 2)}>Test</button>
         </div>
     );
 };
