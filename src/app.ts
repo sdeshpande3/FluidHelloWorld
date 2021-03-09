@@ -13,6 +13,10 @@ import { reactRenderView as renderView } from './view';
 
 const { containerId, isNew } = getContainerId();
 
+const defaultData = {
+    "dice": 1
+}
+
 async function start(): Promise<void> {
     let keyValueDataObject: IKeyValueDataObject;
 
@@ -25,6 +29,9 @@ async function start(): Promise<void> {
             KeyValueInstantiationFactory.type,
             'dice'
         );
+        for (let key in defaultData) {
+            keyValueDataObject.set(key, defaultData[key])
+        }
     } else {
         const fluidDocument = await Fluid.getDocument(
             containerId,

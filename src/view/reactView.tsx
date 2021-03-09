@@ -22,7 +22,7 @@ interface IReactViewProps {
 
 const ReactView = (props: IReactViewProps) => {
     const { dataObject } = props;
-    const [diceValue, setDiceValue] = React.useState(1);
+    const [diceValue, setDiceValue] = React.useState(dataObject.get("dice"));
 
     const diceCharacter = String.fromCodePoint(0x267F + diceValue);
     const rollDice = () => dataObject.set("dice", Math.floor(Math.random() * 6) + 1);
