@@ -6,7 +6,7 @@
 import { ContainerSchema, ISharedMap, SharedMap } from "@fluid-experimental/fluid-framework";
 import { FrsAzFunctionTokenProvider, FrsClient, FrsConnectionConfig, FrsContainerConfig } from "@fluid-experimental/frs-client";
 import { getContainerId } from "./utils";
-import { reactRenderView as renderView } from "./view";
+import { jsRenderView as renderView } from "./view";
 
 async function start() {
 
