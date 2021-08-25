@@ -30,7 +30,7 @@ async function start() {
 
     const prodConfig: FrsConnectionConfig = {
         tenantId: "frs-client-tenant",
-        tokenProvider: new FrsAzFunctionTokenProvider("https://sonaliazfunc.azurewebsites.net/api/GetFrsToken", frsAzUser),
+        tokenProvider: new FrsAzFunctionTokenProvider("https://gentle-mushroom-0792a200f.azurestaticapps.net/api/GetFrsToken", frsAzUser),
         orderer: "https://alfred.eus-1.canary.frs.azure.com",
         storage: "https://historian.eus-1.canary.frs.azure.com",
     };
