@@ -7,7 +7,6 @@ import { ContainerSchema, ISharedMap, SharedMap } from "@fluid-experimental/flui
 import { FrsAzFunctionTokenProvider, FrsClient, FrsConnectionConfig, FrsContainerConfig } from "@fluid-experimental/frs-client";
 import { getContainerId } from "./utils";
 import { jsRenderView as renderView } from "./view";
-// import { httpTrigger } from '../api/GetFrsToken';
 
 async function start() {
 
@@ -28,9 +27,6 @@ async function start() {
         userId: "Test User",
         userName: "test-user"
     }
-
-    // const token = httpTrigger as any;
-    // console.log("TOKEN: ", token);
 
     const prodConfig: FrsConnectionConfig = {
         tenantId: "frs-client-tenant",
