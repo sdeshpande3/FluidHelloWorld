@@ -5,7 +5,7 @@ import { generateToken, generateUser } from "@fluidframework/server-services-uti
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
     // Parse out query parameters. tenantId and documentId are required, userId, userName, and scopes are
     // optional and willbe filled with default values if not provided
-    const tenantId = (req.query.tenantId || (req.body && req.body.tenantId)) as string;
+    const tenantId = "frs-client-tenant";
     const documentId = (req.query.documentId || (req.body && req.body.documentId)) as string;
     const userId = (req.query.userId || (req.body && req.body.userId)) as string;
     const userName = (req.query.userName || (req.body && req.body.userName)) as string;
@@ -20,7 +20,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
 
     // The private key for the given tenantId will be parsed out from the Azure Function's application settings. The value for
     // "tenants" here is a JSON blob that holds the mapping between tenantId's and their respective secret keys
-    const key = JSON.parse(process.env["tenants"])[tenantId];
+    const key = "ac4253ece49d783e979846fb5a09b303";
     if (!key) {
         context.res = {
             status: 404,
