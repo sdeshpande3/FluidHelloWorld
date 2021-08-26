@@ -5,7 +5,7 @@ import { generateToken, generateUser } from "@fluidframework/server-services-uti
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
     // Parse out query parameters. tenantId and documentId are required, userId, userName, and scopes are
     // optional and willbe filled with default values if not provided
-    const tenantId = "frs-client-tenant";
+    const tenantId = (req.query.tenantId || (req.body && req.body.tenantId)) as string;
     const documentId = (req.query.documentId || (req.body && req.body.documentId)) as string;
     const userId = (req.query.userId || (req.body && req.body.userId)) as string;
     const userName = (req.query.userName || (req.body && req.body.userName)) as string;
