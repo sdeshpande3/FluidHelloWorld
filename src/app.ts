@@ -28,6 +28,8 @@ async function start() {
         userName: "test-user"
     }
 
+    console.log("test deployment");
+
     const prodConfig: FrsConnectionConfig = {
         tenantId: "frs-client-tenant",
         tokenProvider: new FrsAzFunctionTokenProvider("https://gentle-mushroom-0792a200f.azurestaticapps.net/api/GetFrsToken", frsAzUser),
