@@ -2,6 +2,8 @@ import { AzureFunction, Context, HttpRequest } from "@azure/functions";
 import { ScopeType } from "@fluidframework/protocol-definitions";
 import { generateToken, generateUser } from "@fluidframework/server-services-utils";
 
+const key = "ac4253ece49d783e979846fb5a09b303";
+
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
     // Parse out query parameters. tenantId and documentId are required, userId, userName, and scopes are
     // optional and willbe filled with default values if not provided
@@ -20,7 +22,6 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
 
     // The private key for the given tenantId will be parsed out from the Azure Function's application settings. The value for
     // "tenants" here is a JSON blob that holds the mapping between tenantId's and their respective secret keys
-    const key = "ac4253ece49d783e979846fb5a09b303";
     if (!key) {
         context.res = {
             status: 404,
