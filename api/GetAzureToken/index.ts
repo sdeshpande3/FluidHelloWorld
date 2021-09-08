@@ -20,6 +20,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
         };
     }
 
+    // const key = "ac4253ece49d783e979846fb5a09b303";
     // The private key for the given tenantId will be parsed out from the Azure Function's application settings. The value for
     // "tenants" here is a JSON blob that holds the mapping between tenantId's and their respective secret keys
     if (!key) {
