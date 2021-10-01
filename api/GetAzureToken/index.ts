@@ -4,7 +4,7 @@ import { generateToken } from "@fluidframework/azure-service-utils";
 // import { generateUser } from "@fluidframework/server-service-utils";
 
 //Replace "myTenantKey" with your key here.
-const key = "1e298c52-acdc-49ad-baf7-b2516d555fe7";
+const key = "5f9d1943796b6d248041950aa2c1d7dc";
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
     const tenantId = (req.query.tenantId || (req.body && req.body.tenantId)) as string;
