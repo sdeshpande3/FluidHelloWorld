@@ -1,7 +1,7 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
 import { ScopeType } from "@fluidframework/azure-client";
 import { generateToken } from "@fluidframework/azure-service-utils";
-import { generateUser } from "@fluidframework/server-service-utils";
+// import { generateUser } from "@fluidframework/server-service-utils";
 
 //Replace "myTenantKey" with your key here.
 const key = "1e298c52-acdc-49ad-baf7-b2516d555fe7";
@@ -35,10 +35,10 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
     }
 
     let user = { name: userName, id: userId };
-    if (!userId || !userName) {
-        const generatedUser = generateUser() as any;
-        user = { name: userName ?? generatedUser.name, id: userId ?? generatedUser.id };
-    }
+    // if (!userId || !userName) {
+    //     const generatedUser = generateUser() as any;
+    //     user = { name: userName ?? generatedUser.name, id: userId ?? generatedUser.id };
+    // }
 
     const token = generateToken(
         tenantId,
