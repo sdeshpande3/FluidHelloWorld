@@ -19,7 +19,7 @@ const azureUser = {
 
 const connectionConfig = {
     tenantId: "1e298c52-acdc-49ad-baf7-b2516d555fe7",
-    tokenProvider: new AzureFunctionTokenProvider("https://gentle-mushroom-0792a200f.azurestaticapps.net/api/GetAzureToken", azureUser),
+    tokenProvider: new AzureFunctionTokenProvider("https://sonaliazfunc.azurewebsites.net/api/GetFrsToken", azureUser),
     orderer: "https://alfred.westus2.fluidrelay.azure.com",
     storage: "https://historian.westus2.fluidrelay.azure.com",
 };
