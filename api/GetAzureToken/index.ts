@@ -4,7 +4,6 @@ import { generateToken } from "@fluidframework/azure-service-utils";
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
     const tenantId = (req.query.tenantId || (req.body && req.body.tenantId)) as string;
-    console.log("tenantId: ", tenantId);
     const documentId = (req.query.documentId || (req.body && req.body.documentId)) as string;
     const userId = (req.query.userId || (req.body && req.body.userId)) as string;
     const userName = (req.query.userName || (req.body && req.body.userName)) as string;
@@ -18,7 +17,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
     }
 
     //Replace "myTenantKey" with your key here.
-    const key = "5f9d1943796b6d248041950aa2c1d7dc";
+    const key = JSON.parse(process.env["tenants"])[tenantId];
     if (!key) {
         context.res = {
             status: 404,
