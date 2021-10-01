@@ -2,6 +2,9 @@ import { AzureFunction, Context, HttpRequest } from "@azure/functions";
 import { ScopeType } from "@fluidframework/azure-client";
 import { generateToken } from "@fluidframework/azure-service-utils";
 
+//Replace "myTenantKey" with your key here.
+const key = "5f9d1943796b6d248041950aa2c1d7dc";
+
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
     const tenantId = (req.query.tenantId || (req.body && req.body.tenantId)) as string;
     const documentId = (req.query.documentId || (req.body && req.body.documentId)) as string;
@@ -13,15 +16,6 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
         context.res = {
             status: 400,
             body: "No tenantId provided in query params",
-        };
-    }
-
-    //Replace "myTenantKey" with your key here.
-    const key = JSON.parse(process.env["tenants"])[tenantId];
-    if (!key) {
-        context.res = {
-            status: 404,
-            body: `No key found for the provided tenantId: ${tenantId}`,
         };
     }
 
