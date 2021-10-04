@@ -1,5 +1,5 @@
-var ScopeType =  require('@fluidframework/protocol-definitions');
-var services =  require('@fluidframework/server-services-utils');
+const ScopeType =  require('@fluidframework/protocol-definitions');
+const generateToken =  require('@fluidframework/server-services-utils').generateToken;
 
 const key = "5f9d1943796b6d248041950aa2c1d7dc";
 
@@ -33,7 +33,7 @@ module.exports = async function (context, req) {
 
     let user = { name: userName, id: userId };
 
-    const token = (await services).generateToken(
+    const token = generateToken(
         tenantId,
         documentId,
         key,
