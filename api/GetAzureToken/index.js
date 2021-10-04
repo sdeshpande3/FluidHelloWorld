@@ -1,5 +1,5 @@
-const ScopeType =  import('@fluidframework/protocol-definitions');
-const services =  import('@fluidframework/server-services-utils');
+var ScopeType =  require('@fluidframework/protocol-definitions');
+var services =  require('@fluidframework/server-services-utils');
 
 const key = "5f9d1943796b6d248041950aa2c1d7dc";
 
