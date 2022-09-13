@@ -5,8 +5,9 @@
 
 pr:
 - main
+- main-azure
 
-pool: 'Lite'
+pool: 'Small'
 
 steps:
 - task: ComponentGovernanceComponentDetection@0
